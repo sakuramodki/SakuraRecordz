@@ -2,38 +2,39 @@ import gulp from 'gulp';
 import babel from 'gulp-babel';
 import connect from 'gulp-connect-php';
 import browserSync from 'browser-sync';
+
+import fontAwesome from 'node-font-awesome';
 import path from 'path';
 
 import gulpLoadPlugins from 'gulp-load-plugins';
 const $ = gulpLoadPlugins();
 
+import webpackStream from 'webpack-stream';
+import webpack from 'webpack';
+const webpackConfig = require("./webpack.config");
+
+// build task (fonts)
+gulp.task('fonts', function() {
+  gulp.src(fontAwesome.fonts)
+    .pipe(gulp.dest('./fonts'));
+});
+
 // build task (sripts)
 gulp.task('scripts', () => {
-  gulp.src('src/scripts/main.js')
-    .pipe($.webpack({
-      output: {
-        filename: 'main.bundle.js'
-      },
-      module: {
-        rules: [{
-          test: /\.js$/,
-          use: [{
-            loader: 'babel-loader',
-            options: { }
-          }],
-        }],
-      },
-    }))
-    .pipe(gulp.dest('./assets/'))
+  return webpackStream(webpackConfig, webpack)
+    .pipe(gulp.dest('assets'));
 });
 
 // build tasks (styles)
 gulp.task('sass', () => {
-  gulp.src(`src/styles/**/*.scss`)
+  gulp.src(`src/styles/*.scss`)
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.sass({
-      includePaths: ['.']
+      includePaths: [
+        '.',
+         fontAwesome.scssPath,
+      ]
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer())
     .pipe($.sourcemaps.write('.'))
@@ -41,11 +42,15 @@ gulp.task('sass', () => {
 });
 
 gulp.task('less', () => {
-  gulp.src(`src/styles/**/*.less`)
+  gulp.src(`src/styles/*.less`)
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.less({
-      paths: [ path.join(__dirname, 'less', 'includes') ]
+      paths: [
+        path.join(__dirname, 'less', 'includes'),
+        './node_modules/bootstrap-less',
+         fontAwesome.lessPath,
+      ]
     }))
     .pipe($.autoprefixer())
     .pipe($.sourcemaps.write('.'))
@@ -55,7 +60,7 @@ gulp.task('less', () => {
 gulp.task('styles', ['sass', 'less']);
 
 // build task (all)
-gulp.task('build', ['scripts', 'styles']);
+gulp.task('build', ['scripts', 'styles', 'fonts']);
 
 // watch
 gulp.task('watch', () => {

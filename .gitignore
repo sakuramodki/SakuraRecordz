@@ -1,4 +1,5 @@
 assets/*
+fonts/*
 node_modules/*
 *.swp
 tags.lock

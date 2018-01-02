@@ -1,5 +1,5 @@
 {
-  "name": "gulp_dev",
+  "name": "sakurarecordz_hp",
   "version": "1.0.0",
   "scripts": {
     "build": "gulp build",
@@ -9,22 +9,37 @@
   "keywords": [],
   "author": "sakuramodki",
   "license": "MIT",
+  "dependencies": {
+    "bootstrap-less": "^3.3.8",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "node-font-awesome": "^1.0.2"
+  },
   "devDependencies": {
+    "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
     "browser-sync": "^2.23.1",
     "browserify": "^13.0.1",
+    "css-loader": "^0.28.7",
+    "file-loader": "^1.1.6",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^3.9.2",
     "gulp-connect-php": "^1.0.1",
     "gulp-less": "^3.4.0",
     "gulp-load-plugins": "^1.2.4",
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
-    "gulp-webpack": "^1.5.0",
+    "gulp-uglify": "^3.0.0",
     "gulp_init": "git+https://github.com/sakuramodki/gulp_init.git",
+    "less-loader": "^4.0.5",
+    "node-bourbon": "^4.2.8",
     "path": "^0.12.7",
-    "webpack": "^3.10.0"
+    "style-loader": "^0.19.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0",
+    "webpack-stream": "^4.0.0"
   },
-  "main": "gulpfile.babel.js",
+  "main": "src/scripts/main.js",
   "description": ""
 }

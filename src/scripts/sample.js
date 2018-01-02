@@ -1,4 +1,4 @@
 export default () => {
   const name = 'world';
-  alert(`hello ${name}!!!`);
+  console.log(`hello ${name}!!!`);
 };
