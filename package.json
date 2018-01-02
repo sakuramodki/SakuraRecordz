@@ -1,0 +1,30 @@
+{
+  "name": "gulp_dev",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp start",
+    "watch": "gulp watch"
+  },
+  "keywords": [],
+  "author": "sakuramodki",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.1",
+    "browserify": "^13.0.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-connect-php": "^1.0.1",
+    "gulp-less": "^3.4.0",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-webpack": "^1.5.0",
+    "gulp_init": "git+https://github.com/sakuramodki/gulp_init.git",
+    "path": "^0.12.7",
+    "webpack": "^3.10.0"
+  },
+  "main": "gulpfile.babel.js",
+  "description": ""
+}
