@@ -3,3 +3,4 @@ fonts/*
 node_modules/*
 *.swp
 tags.lock
+.DS_Store
