@@ -138,6 +138,50 @@
 
 
     <!-- Release Section -->
+<?php
+    $csvPath = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTWVH6vFIptjOhpNY5i9bsWHpYgCf2HjTjYeLKcLbyZexk83J2i1Ijte-SBPOXFF17lB6vglgzRKvI4/pub?output=csv";
+    $csv = file_get_contents($csvPath);
+    $lines = explode("\n", $csv);
+
+    // csv filter
+    $filtered = [];
+    $cache = "";
+
+    // "が閉じられていない場合次の行と連結する
+    foreach ($lines as $line) {
+        if ($cache !== "") {
+            $cache .= "<br/>";
+        }
+        $cache .= $line;
+        $count = mb_substr_count($cache, '"');
+        if ($count %2 == 0) {
+            $filtered[] = $cache;
+            $cache = "";
+        }
+    }
+    if ($cache !== "") {
+        $filtered[] = $cache;
+    }
+
+    // csvからkey value形式へ変換する
+    $data = [];
+    foreach($filtered as $line) {
+        $data[] = explode(",", $line);
+    }
+
+    $releases = [];
+    for ($i = 1; $i < count($data);  $i++) {
+        $release = [];
+        foreach ((array)$data[0] as $index => $key) {
+            $value = isset($data[$i][$index])? $data[$i][$index] : "";
+            $value = preg_replace('/^"(.*)"$/', '\1', $value);
+            $release[$key] = $value;
+        }
+        $releases[] = $release;
+    }
+
+    // key-valueをレンダリングする
+?>
     <section id="releases">
       <div class="container">
         <div class="row">
@@ -145,17 +189,27 @@
             <h2 class="section-heading">Releases</h2>
           </div>
         </div>
-        <div class="row text-center">
-          <h1>Synergy-Style Vol.8</h1>
-        </div>
-        <div class="row text-center">
-          <div class="col-sm-4">
-            <img class="jacket" src="./img/Synergy8.png" />
-          </div>
-          <div class="col-sm-8">
-            description
-          </div>
-        </div>
+<?php
+        foreach($releases as $release) {
+?>
+            <div class="row text-center release-content">
+              <div class="col-sm-3">
+              </div>
+              <div class="col-sm-2">
+                <a href="<?= $release['Link']; ?>">
+                  <img class="jacket" src="<?= $release['Image']?>" />
+                </a>
+              </div>
+              <div class="col-sm-4">
+                <a href="<?= $release['Link']; ?>"><h3 class="title"><?= $release['Title']; ?></h3></a>
+                <p class="description"><?= $release['Description']; ?></p>
+              </div>
+              <div class="col-sm-3">
+              </div>
+            </div>
+<?php
+        }
+?>
       </div>
     </section>
 
@@ -322,10 +376,21 @@
           </div>
         </div>
         <div class="row text-center">
-          <h1>Synergy-Style Vol.8</h1>
+            <a class="btn btn-primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSdB0x18gJ5UQQ6NT5JPmRKB_YBKjeXsm1V1X2qTgCkHoScujA/viewform?usp=sf_link">Contact to us</a>
         </div>
       </div>
     </section>
+
+    <!-- footer -->
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+              Copyright © Sakura Recordz！<?= date('Y'); ?>
+          </div>
+        </div>
+      </div>
+    </footer>
 
 
 
