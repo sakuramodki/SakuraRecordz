@@ -1,0 +1,100 @@
+.intro {
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  padding: 60px 0;
+  color: @fontColor;
+  display: inline-table;
+
+  animation: fadeIn 5s ease 0s 1 normal;
+  @keyframes fadeIn {
+    0% {opacity: 0}
+    100% {opacity: 1}
+  }
+
+  .intro-bg {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url(http://release.sakurarecordz.com/J-HardstyleZ-1/hdimg/cloud3.jpg) center center no-repeat #000;
+    background-size: cover;
+    filter: brightness(.5);
+
+    animation: twitch 10s ease 1s infinite alternate;
+      @keyframes twitch {
+        0% {
+          filter: brightness(1.5)
+        }
+        20% {
+          filter: brightness(1.0)
+        }
+        50% {
+          filter: brightness(.8)
+        }
+        100% {
+          filter: brightness(.5)
+        }
+      }
+  }
+
+  .intro-body {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .title {
+    font-family: 'Black Ops One', cursive;
+    font-display: swap;
+    font-size: 65px;
+  }
+
+  .page-scroll {
+    color: white;
+  }
+
+
+  .logo {
+    width: 250px;
+    height: 280px;
+
+    @media (min-width: 768px) {
+      width: 375px;
+      height: 420px;
+    }
+
+    @media (min-width: 992px) {
+      width: 500px;
+      height: 560px;
+    }
+
+    fill: transparent;
+    stroke: rgba(255,255,255,.0);
+    stroke-width: 2;
+    stroke-dasharray: 1000;
+
+    animation: test 5s ease-out 3s forwards;
+    @keyframes test {
+      0% {
+        stroke: transparent;
+        stroke-dasharray: 1000;
+        fill: transparent;
+      }
+      70% {
+        stroke: white;
+        stroke-dasharray: 100 10;
+        fill: transparent;
+      }
+      95%{
+        stroke: rgba(255,255,255,0.8);
+        fill: rgba(255,255,255,1.0);
+      }
+      100% {
+        stroke: rgba(255,255,255,0);
+        fill: rgba(255,255,255,0.9);
+      }
+    }
+  }
+}
