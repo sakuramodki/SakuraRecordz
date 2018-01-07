@@ -127,7 +127,7 @@
             </span>
             <h4 class="service-heading">Mastering</h4>
             <p class="text-muted">ミックス・マスタリングを行っています</p>
-            <p class="text-muted">くわしくは </p>
+            <p class="text-muted">くわしくは <a href="/mastering.php">こちら</a>をご確認ください</p>
           </div>
         </div>
       </div>
@@ -219,7 +219,7 @@
           </div>
         </div>
         <div class="row text-center">
-            <a class="btn btn-primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSdB0x18gJ5UQQ6NT5JPmRKB_YBKjeXsm1V1X2qTgCkHoScujA/viewform?usp=sf_link">Contact to us</a>
+            <a class="btn btn-primary btn-lg" href="https://docs.google.com/forms/d/e/1FAIpQLSdB0x18gJ5UQQ6NT5JPmRKB_YBKjeXsm1V1X2qTgCkHoScujA/viewform?usp=sf_link">Contact us</a>
         </div>
       </div>
     </section>
