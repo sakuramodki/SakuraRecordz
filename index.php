@@ -17,7 +17,7 @@
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
             <i class="fa fa-bars"></i>
           </button>
-          <a class="navbar-brand page-scroll" href="#page-top">
+          <a class="navbar-brand page-scroll" href="/">
             <i class="fa fa-play-circle"></i>
             <span class="light">Sakura</span>Recordz!
           </a>
@@ -36,13 +36,10 @@
               <a class="page-scroll" href="#releases">Releases</a>
             </li>
             <li>
-              <a class="page-scroll" href="#mastring">Mastering</a>
+              <a class="page-scroll" href="mastering.php">Mastering</a>
             </li>
             <li>
               <a class="page-scroll" href="#contact">Contact</a>
-            </li>
-            <li>
-              <a class="page-scroll" href="#member">Member</a>
             </li>
           </ul>
         </div>
@@ -53,7 +50,7 @@
 
 
     <!-- Intro Header -->
-    <header class="intro">
+    <header id="intro" class="intro">
       <div class="intro-bg"></div> 
       <div class="intro-body">
         <div class="container">
@@ -175,7 +172,7 @@
         foreach ((array)$data[0] as $index => $key) {
             $value = isset($data[$i][$index])? $data[$i][$index] : "";
             $value = preg_replace('/^"(.*)"$/', '\1', $value);
-            $release[$key] = $value;
+            $release[trim($key)] = trim($value);
         }
         $releases[] = $release;
     }
@@ -212,160 +209,6 @@
 ?>
       </div>
     </section>
-
-    <!-- Mastering Section -->
-    <section id="mastering">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h1 class="section-heading">Mastring</h1>
-          </div>
-        </div>
-
-        <div class="row text-center">
-          <h3>あなたの音楽へ息吹を</h3>
-        </div>
-        <div class="row text-center">
-          日々発展していく音楽制作。<br/>
-          CDのリリースや、iTunes、Beatportなどのデジタルリリース、ハイレゾ対応の音源リリースなど、<br/>
-          あなたの楽曲を様々なフォーマットで最高の状態でリスナーに届けるお手伝いをいたします。<br/>
-        </div>
-
-        <div class="row text-center">
-          <h3>価格</h3>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <table class="table table-inverse table-hover">
-              <thead>
-                <tr>
-                  <th>項目</th>
-                  <th>価格</th>
-                  <th>詳細</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">DDPプラン</th>
-                  <td>2000円/1Disc</td>
-                  <td>CDのプレス業者へデジタル入稿するDDPの作成を代行します<br/>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">簡易マスタリングプラン</th>
-                  <td>1000円/1曲</td>
-                  <td>音量を合わせることのみの最も手頃なプランです<br/>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">FULLマスタリング(6曲以下)</th>
-                  <td>2000円/1曲</td>
-                  <td>音量の調整のほか、音の質感の調整、細部までの音の微調整を行うプランです<br/>
-                </tr>
-                <tr>
-                  <th scope="row">FULLマスタリング(7曲以下)</th>
-                  <td>1500円/1曲</td>
-                  <td>音量の調整のほか、音の質感の調整、細部までの音の微調整を行うプランです<br/>
-                </tr>
-                <tr>
-                  <th scope="row">特急マスタリング</th>
-                  <td>3000円/1曲</td>
-                  <td>急なマスタリングに対して対応いたします(目安納品後3日)<br/>
-                </tr>
-                <tr>
-                  <th scope="row">マスターCDを発送</th>
-                  <td>1000円/1Disc + 送料</td>
-                  <td>マスターをデジタルデータではなくCDにて発送します</td>
-                </tr>
-                <tr>
-                  <th scope="row">MP3向けマスタリング</th>
-                  <td>+1000円/1曲</td>
-                  <td>通常のマスタリングと別にMP3向けに音の調整を行ったものも納品します</td>
-                </tr>
-                <tr>
-                  <th></th>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-        <div class="row text-center">
-          <h3>各プランの比較</h3>
-        </div>
-        <div class="row">
-          <div class="col-sm-12">
-            <table class="table table-inverse table-hover">
-              <thead>
-                <tr>
-                  <th>内容</th>
-                  <th>DDPプラン</th>
-                  <th>簡易マスタリグ</th>
-                  <th>FULLマスタリング</th>
-                  <th>特急マスタリング</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">DDPの作成</th>
-                  <td>&#10004;</td>
-                  <td></td>
-                  <td>&#10004;</td>
-                  <td>&#10004;</td>
-                </tr>
-                <tr>
-                  <th scope="row">WAVの作成</th>
-                  <td></td>
-                  <td></td>
-                  <td>&#10004;</td>
-                  <td>&#10004;</td>
-                </tr>
-                <tr>
-                  <th scope="row">音量の調整</th>
-                  <td></td>
-                  <td>&#10004;</td>
-                  <td>&#10004;</td>
-                  <td>&#10004;</td>
-                </tr>
-                <tr>
-                  <th scope="row">ジャンルに合わせた音質の調整</th>
-                  <td></td>
-                  <td></td>
-                  <td>&#10004;</td>
-                  <td>&#10004;</td>
-                </tr>
-                <tr>
-                  <th scope="row">MP3向けマスタリング</th>
-                  <td></td>
-                  <td></td>
-                  <td>&#10004; (+1000円/1曲)</td>
-                  <td>&#10004; (+1000円/1曲)</td>
-                </tr>
-                <tr>
-                  <th scope="row">納期の目安<sup> [1] </sup></th>
-                  <td>通常7日以内</td>
-                  <td>通常7日以内</td>
-                  <td>通常14日以内</td>
-                  <td>通常3日以内</td>
-                </tr>
-                <tr>
-                  <th scope="row">リテイク<sup> [2] </sup></th>
-                  <td></td>
-                  <td>&#10004; 1回 </td>
-                  <td>&#10004; 3回 </td>
-                  <td>&#10004; 3回 </td>
-                </tr>
-              </tbody>
-            </table>
-            <small>1: 納期はデータをご納品頂いてから初回納品までの期間です。繁忙期などはこの限りではありません。</small><br/>
-            <small>2: リテイクは初回納品から14日間のみ受け付けます。</small>
-          </div>
-        </div>
-      </div>
-    </section>
-
 
     <!-- Contact Section -->
     <section id="contact">

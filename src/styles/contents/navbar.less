@@ -1,14 +1,27 @@
-.navbar-brand {
-  color: white;
-  color: rgba(128,128,128,0.9);
-}
-
 .navbar {
-  background-color: white;
+    background-color: white;
+    opacity: 0;
+    top: -200px;
+    transition: all 1s;
+
+    .navbar-brand {
+        color: rgba(128,128,128,0.9);
+    }
+
+    .navbar-toggle {
+        color: rgba(128,128,128,0.9);
+    }
+
+    .navbar-collapse {
+        li {
+            background-color: white;
+        }
+    }
 }
 
-.navbar-collapse {
-  li {
-    background-color: white;
-  }
+.menu-show {
+    .navbar {
+        opacity: 1.0;
+        top: 0px;
+    }
 }
