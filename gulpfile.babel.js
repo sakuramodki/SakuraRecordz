@@ -8,6 +8,8 @@ import path from 'path';
 
 import gulpLoadPlugins from 'gulp-load-plugins';
 const $ = gulpLoadPlugins();
+import cleanCSS from 'gulp-clean-css';
+
 
 import webpackStream from 'webpack-stream';
 import webpack from 'webpack';
@@ -22,6 +24,7 @@ gulp.task('fonts', function() {
 // build task (sripts)
 gulp.task('scripts', () => {
   return webpackStream(webpackConfig, webpack)
+    .pipe($.uglify())
     .pipe(gulp.dest('assets'));
 });
 
@@ -53,6 +56,7 @@ gulp.task('less', () => {
       ]
     }))
     .pipe($.autoprefixer())
+    .pipe(cleanCSS())
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('assets'));
 });
