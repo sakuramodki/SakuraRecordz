@@ -26,8 +26,16 @@ $(document).ready( () => {
   updateScrollMenu();
   $(window).scroll(updateScrollMenu);
 
+  $('ul.nav .page-scroll').click(() => {
+    $('.navbar-main-collapse').attr('aria-expanded', false);
+    $('.navbar-main-collapse').removeClass('in');
+  });
+
   var height = $('.intro').height();
   console.log(height);
   $('.intro').height(height);
+  $('.intro-bg').height(height + 120);
 })
+
+
 
