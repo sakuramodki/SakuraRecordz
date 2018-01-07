@@ -22,7 +22,6 @@ const updateScrollMenu = () => {
 };
 
 $(document).ready( () => {
-
   updateScrollMenu();
   $(window).scroll(updateScrollMenu);
 
