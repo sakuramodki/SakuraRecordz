@@ -1,8 +1,8 @@
 DEST=~/mnt/sakura/www/SakuraRecordz
 
-deploy: build cleanup deploy-all
+all: build cleanup deploy
 
-deploy-all: deploy-php deploy-assets deploy-fonts deploy-img
+deploy: deploy-php deploy-assets deploy-fonts deploy-img
 
 cleanup:
 	for file in `find . -name 'tags.lock' -o -name '.DS_Store' -o -name '*.swp' -o -name '*.swo'`; \
