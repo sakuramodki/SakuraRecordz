@@ -18,20 +18,22 @@ build:
 deploy-php:
 	echo "Deploying php..."
 	rm $(DEST)/*.php
+	rm -r $(DEST)/App
 	cp *.php $(DEST)
+	cp -r App $(DEST)
 
 deploy-assets:
 	echo "Deploying assets..."
-	rm $(DEST)/assets/*
+	rm -r $(DEST)/assets/*
 	cp -r ./assets/* $(DEST)/assets
 	rm $(DEST)/assets/*.map
 
 deploy-fonts:
 	echo "Deploying fonts..."
-	rm $(DEST)/fonts/*
+	rm -r $(DEST)/fonts/*
 	cp -r ./fonts/* $(DEST)/fonts
 
 deploy-img:
 	echo "Deploying img..."
-	rm $(DEST)/img/*
+	rm -r $(DEST)/img/*
 	cp -r ./img/* $(DEST)/img/
