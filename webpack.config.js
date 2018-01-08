@@ -2,7 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/scripts/main.js',
+  entry: {
+    index: './src/scripts/index.js',
+    mastring: './src/scripts/mastring.js'
+  },
   module: {
     rules: [
       {
@@ -21,7 +24,7 @@ module.exports = {
   ],
 
   output: {
-    filename: "main.bundle.js",
+    filename: "[name].bundle.js",
     path: path.join(__dirname, "assets"),
     publicPath: "fonts/"
   }
