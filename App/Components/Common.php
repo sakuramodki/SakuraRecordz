@@ -6,7 +6,7 @@ class Common {
   }
 
   public function getTemplateName() {
-    $classNamespace = preg_replace('/^\\\\*(SakuraRecordz)*\\\\*/', '', static::class);
+    $classNamespace = preg_replace('/^\\\\*(SakuraRecordz)*\\\\*/', '', get_class($this));
     $classNamespace = preg_replace('/Components/', 'Template', $classNamespace);
     $fileName = str_replace('\\', DIRECTORY_SEPARATOR, $classNamespace) . '.tmpl';
     return $fileName;

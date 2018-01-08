@@ -1,5 +1,5 @@
 <?php
-$root = dirname(__FILE__);
+$root = './';
 require_once './autoload.php';
 $autoloader = new autoLoader($root);
 $autoloader->register();
