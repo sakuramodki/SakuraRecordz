@@ -6,11 +6,16 @@
   padding: 60px 0;
   color: @fontColor;
   display: inline-table;
-
   animation: fadeIn 5s ease 0s 1 normal;
+
   @keyframes fadeIn {
-    0% {opacity: 0}
-    100% {opacity: 1}
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
   }
 
   .intro-bg {
@@ -21,7 +26,7 @@
     right: 0;
     background: url(http://release.sakurarecordz.com/J-HardstyleZ-1/hdimg/cloud3.jpg) center center no-repeat #000;
     background-size: cover;
-    opacity: .8
+    opacity: 0.8;
   }
 
   .intro-body {
@@ -38,7 +43,6 @@
   .page-scroll {
     color: white;
   }
-
 
   .logo {
     width: 250px;
@@ -59,8 +63,8 @@
     stroke: transparent;
     stroke-dasharray: 1000;
     fill: transparent;
-
     animation: test 5s ease-out 2s forwards;
+
     @keyframes test {
       0% {
         stroke: transparent;
@@ -74,13 +78,14 @@
         fill: transparent;
       }
 
-      90%{
-        stroke: rgba(255,255,255,0.8);
-        fill: rgba(255,255,255,1.0);
+      90% {
+        stroke: rgba(255, 255, 255, 0.8);
+        fill: rgba(255, 255, 255, 1);
       }
+
       100% {
-        stroke: rgba(255,255,255,0);
-        fill: rgba(255,255,255,0.9);
+        stroke: rgba(255, 255, 255, 0);
+        fill: rgba(255, 255, 255, 0.9);
       }
     }
   }
