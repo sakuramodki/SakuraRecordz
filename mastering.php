@@ -196,7 +196,7 @@
                   <td>&#10004;</td>
                 </tr>
                 <tr>
-                  <th scope="row">MP3向けマスタリング</th>
+                  <th scope="row">マスターCDを発送</th>
                   <td></td>
                   <td>&#10004; (+1000円/1disc)</td>
                   <td>&#10004; (+1000円/1disc)</td>
