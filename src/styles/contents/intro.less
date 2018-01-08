@@ -1,12 +1,12 @@
 .intro {
-  top: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  padding: 60px 0;
+  animation: fadeIn 5s ease 0s 1 normal;
   color: @fontColor;
   display: inline-table;
-  animation: fadeIn 5s ease 0s 1 normal;
+  height: 100%;
+  padding: 60px 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
 
   @keyframes fadeIn {
     0% {
@@ -19,14 +19,14 @@
   }
 
   .intro-bg {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
     background: url(http://release.sakurarecordz.com/J-HardstyleZ-1/hdimg/cloud3.jpg) center center no-repeat #000;
     background-size: cover;
+    bottom: 0;
+    left: 0;
     opacity: 0.8;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 
   .intro-body {
@@ -35,8 +35,8 @@
   }
 
   .title {
-    font-family: 'Black Ops One', cursive;
     font-display: swap;
+    font-family: 'Black Ops One', cursive;
     font-size: 65px;
   }
 
@@ -45,47 +45,45 @@
   }
 
   .logo {
-    width: 250px;
+    animation: logoAnimation 5s ease-out 2s forwards;
+    fill: transparent;
     height: 280px;
+    stroke: transparent;
+    stroke-dasharray: 1000;
     stroke-width: 2;
+    width: 250px;
 
     @media (min-width: 768px) {
-      width: 375px;
       height: 420px;
+      width: 375px;
     }
 
     @media (min-width: 992px) {
-      width: 500px;
       height: 560px;
+      width: 500px;
     }
 
-    /// animations
-    stroke: transparent;
-    stroke-dasharray: 1000;
-    fill: transparent;
-    animation: test 5s ease-out 2s forwards;
-
-    @keyframes test {
+    @keyframes logoAnimation {
       0% {
+        fill: transparent;
         stroke: transparent;
         stroke-dasharray: 1000;
-        fill: transparent;
       }
 
       70% {
+        fill: transparent;
         stroke: white;
         stroke-dasharray: 100 10;
-        fill: transparent;
       }
 
       90% {
-        stroke: rgba(255, 255, 255, 0.8);
         fill: rgba(255, 255, 255, 1);
+        stroke: rgba(255, 255, 255, 0.8);
       }
 
       100% {
-        stroke: rgba(255, 255, 255, 0);
         fill: rgba(255, 255, 255, 0.9);
+        stroke: rgba(255, 255, 255, 0);
       }
     }
   }
